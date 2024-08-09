@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-import { useCart } from '../context/CartContext'; // Import useCart hook
+import { useCart } from '../context/CartContext'; 
 
 const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [relatedProducts, setRelatedProducts] = useState([]);
-  const { addToCart } = useCart(); // Get addToCart function from CartContext
+  const { addToCart } = useCart(); 
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -18,7 +18,6 @@ const ProductDetails = () => {
 
     const fetchRelatedProducts = async () => {
       const { data } = await axios.get(`http://localhost:5000/api/products`);
-      // Assuming related products have the same category
       setRelatedProducts(data.filter((p) => p.category === product?.category && p._id !== id));
     };
 

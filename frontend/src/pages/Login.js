@@ -9,18 +9,13 @@ const Login = () => {
     const handleLogin = (e) => {
         e.preventDefault();
 
-        // Hardcoded admin credentials
         const adminUsername = 'admin';
         const adminPassword = 'admin';
 
-        // Check if entered credentials match the hardcoded credentials
         if (username === adminUsername && password === adminPassword) {
-            // Store admin status in localStorage to keep the user logged in
             localStorage.setItem('isAdmin', 'true');
-            // Navigate to the admin dashboard
             navigate('/admin');
         } else {
-            // Display an error message if credentials are incorrect
             alert('Invalid credentials. Please try again.');
         }
     };

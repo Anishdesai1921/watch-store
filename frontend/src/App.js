@@ -8,7 +8,7 @@ import Cart from './components/Cart';
 import Checkout from './pages/Checkout';
 import AdminDashboard from './pages/AdminDashboard';
 import Login from './pages/Login';
-import ProtectedRoute from './components/ProtectedRoute'; // Import ProtectedRoute
+import ProtectedRoute from './components/ProtectedRoute'; 
 import { CartProvider } from './context/CartContext';
 
 const App = () => {
@@ -23,7 +23,7 @@ const App = () => {
             <Route path="/product/:id" element={<ProductDetails />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
-            <Route path="/login" element={<Login />} /> {/* Add login route */}
+            <Route path="/login" element={<Login />} /> 
             <Route
               path="/admin"
               element={

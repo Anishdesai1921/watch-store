@@ -1,22 +1,19 @@
 import React, { createContext, useState, useContext } from 'react';
 
-// Create the CartContext
 const CartContext = createContext();
 
-// Custom hook to use the CartContext
 export const useCart = () => {
     return useContext(CartContext);
 };
 
-// CartProvider component to wrap around parts of the app that need access to the cart
 export const CartProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([]);
 
     const addToCart = (product) => {
-        if (!product) return; // Ensure the product is defined
+        if (!product) return; 
 
         setCartItems((prevItems) => {
-            if (!prevItems) prevItems = []; // Ensure prevItems is an array
+            if (!prevItems) prevItems = []; 
 
             const itemExists = prevItems.find(item => item._id === product._id);
             if (itemExists) {
@@ -41,7 +38,7 @@ export const CartProvider = ({ children }) => {
                 item._id === productId
                     ? { ...item, quantity: quantity }
                     : item
-            ).filter(item => item.quantity > 0) // Remove items with quantity 0
+            ).filter(item => item.quantity > 0) 
         );
     };
 

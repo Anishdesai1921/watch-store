@@ -23,13 +23,11 @@ const Checkout = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Process order logic
+    
     console.log('Order placed:', { userDetails, cartItems, cartTotal });
 
-    // Clear the cart
     clearCart();
 
-    // Redirect to success page or home page
     navigate('/success');
   };
 

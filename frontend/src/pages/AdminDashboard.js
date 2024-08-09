@@ -72,11 +72,11 @@ const AdminDashboard = () => {
   const handleEditSubmit = async () => {
     const { data } = await axios.put(`http://localhost:5000/api/products/${editProduct._id}`, editProduct);
     setProducts(products.map(product => (product._id === data._id ? data : product)));
-    setEditProduct(null); // Close the pop-up
+    setEditProduct(null); 
   };
 
   const handleCancelEdit = () => {
-    setEditProduct(null); // Close the pop-up without saving
+    setEditProduct(null); 
   };
 
   return (
